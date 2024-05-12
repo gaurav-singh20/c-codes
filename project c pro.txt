@@ -1,0 +1,255 @@
+Here's a sample C programming project for a laptop repairing system:
+
+Problem Statement
+You are tasked with creating a laptop repairing system that can keep track of laptops, their repair status, and generate bills for customers. The system should have the following features:
+
+Add a new laptop to the system
+Update the repair status of a laptop
+Generate a bill for a laptop repair
+Search for laptops by brand name or repair status
+Display all laptops in the system
+Solution
+
+We can start by defining a struct that will represent a laptop:
+
+c
+Copy code
+typedef struct {
+    char brand[20];
+    char model[20];
+    int serial_no;
+    char repair_status[20];
+    float repair_cost;
+} Laptop;
+We can then create an array of laptops to store all the laptops in the system:
+
+c
+Copy code
+Laptop laptops[100];
+int num_laptops = 0;
+We can now define the functions to implement the features of the system:
+
+Add a new laptop to the system
+c
+Copy code
+void add_laptop() {
+    Laptop new_laptop;
+    printf("Enter brand name: ");
+    scanf("%s", new_laptop.brand);
+    printf("Enter model name: ");
+    scanf("%s", new_laptop.model);
+    printf("Enter serial number: ");
+    scanf("%d", &new_laptop.serial_no);
+    printf("Enter repair status: ");
+    scanf("%s", new_laptop.repair_status);
+    printf("Enter repair cost: ");
+    scanf("%f", &new_laptop.repair_cost);
+    laptops[num_laptops++] = new_laptop;
+    printf("Laptop added successfully!\n");
+}
+Update the repair status of a laptop
+c
+Copy code
+void update_status() {
+    int serial_no;
+    printf("Enter serial number of laptop to update: ");
+    scanf("%d", &serial_no);
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        if (laptops[i].serial_no == serial_no) {
+            printf("Enter new repair status: ");
+            scanf("%s", laptops[i].repair_status);
+            printf("Repair status updated successfully!\n");
+            return;
+        }
+    }
+    printf("Laptop not found!\n");
+}
+Generate a bill for a laptop repair
+c
+Copy code
+void generate_bill() {
+    int serial_no;
+    printf("Enter serial number of laptop: ");
+    scanf("%d", &serial_no);
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        if (laptops[i].serial_no == serial_no) {
+            printf("Brand name: %s\n", laptops[i].brand);
+            printf("Model name: %s\n", laptops[i].model);
+            printf("Repair cost: $%.2f\n", laptops[i].repair_cost);
+            return;
+        }
+    }
+    printf("Laptop not found!\n");
+}
+Search for laptops by brand name or repair status
+c
+Copy code
+void search_laptops() {
+    char search_str[20];
+    printf("Enter search string: ");
+    scanf("%s", search_str);
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        if (strcmp(laptops[i].brand, search_str) == 0 || strcmp(laptops[i].repair_status, search_str) == 0) {
+            printf("Brand name: %s\n", laptops[i].brand);
+            printf("Model name: %s\n", laptops[i].model);
+            printf("Serial number: %d\n
+
+
+
+Gaurav Singh
+complete code
+Here's the complete code for the laptop repairing system:
+
+c
+Copy code
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char brand[20];
+    char model[20];
+    int serial_no;
+    char repair_status[20];
+    float repair_cost;
+} Laptop;
+
+Laptop laptops[100];
+int num_laptops = 0;
+
+void add_laptop() {
+    Laptop new_laptop;
+    printf("Enter brand name: ");
+    scanf("%s", new_laptop.brand);
+    printf("Enter model name: ");
+    scanf("%s", new_laptop.model);
+    printf("Enter serial number: ");
+    scanf("%d", &new_laptop.serial_no);
+    printf("Enter repair status: ");
+    scanf("%s", new_laptop.repair_status);
+    printf("Enter repair cost: ");
+    scanf("%f", &new_laptop.repair_cost);
+    laptops[num_laptops++] = new_laptop;
+    printf("Laptop added successfully!\n");
+}
+
+void update_status() {
+    int serial_no;
+    printf("Enter serial number of laptop to update: ");
+    scanf("%d", &serial_no);
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        if (laptops[i].serial_no == serial_no) {
+            printf("Enter new repair status: ");
+            scanf("%s", laptops[i].repair_status);
+            printf("Repair status updated successfully!\n");
+            return;
+        }
+    }
+    printf("Laptop not found!\n");
+}
+
+void generate_bill() {
+    int serial_no;
+    printf("Enter serial number of laptop: ");
+    scanf("%d", &serial_no);
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        if (laptops[i].serial_no == serial_no) {
+            printf("Brand name: %s\n", laptops[i].brand);
+            printf("Model name: %s\n", laptops[i].model);
+            printf("Repair cost: $%.2f\n", laptops[i].repair_cost);
+            return;
+        }
+    }
+    printf("Laptop not found!\n");
+}
+
+void search_laptops() {
+    char search_str[20];
+    printf("Enter search string: ");
+    scanf("%s", search_str);
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        if (strcmp(laptops[i].brand, search_str) == 0 || strcmp(laptops[i].repair_status, search_str) == 0) {
+            printf("Brand name: %s\n", laptops[i].brand);
+            printf("Model name: %s\n", laptops[i].model);
+            printf("Serial number: %d\n", laptops[i].serial_no);
+            printf("Repair status: %s\n", laptops[i].repair_status);
+            printf("Repair cost: $%.2f\n", laptops[i].repair_cost);
+        }
+    }
+}
+
+void display_laptops() {
+    int i;
+    for (i = 0; i < num_laptops; i++) {
+        printf("Brand name: %s\n", laptops[i].brand);
+        printf("Model name: %s\n", laptops[i].model);
+        printf("Serial number: %d\n", laptops[i].serial_no);
+        printf("Repair status: %s\n", laptops[i].repair_status);
+        printf("Repair cost: $%.2f\n", laptops[i].repair_cost);
+    }
+}
+
+int main() {
+    int choice;
+    do {
+        printf("\nLaptop Repairing System\n");
+        printf("-----------------------\n");
+        printf("1. Add a new laptop\n");
+       
+
+
+
+Gaurav Singh
+last half of above code
+c
+Copy code
+    printf("2. Update repair status of a laptop\n");
+    printf("3. Generate repair bill\n");
+    printf("4. Search for laptops\n");
+    printf("5. Display all laptops\n");
+    printf("6. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1:
+            add_laptop();
+            break;
+        case 2:
+            update_status();
+            break;
+        case 3:
+            generate_bill();
+            break;
+        case 4:
+            search_laptops();
+            break;
+        case 5:
+            display_laptops();
+            break;
+        case 6:
+            printf("Exiting...");
+            break;
+        default:
+            printf("Invalid choice! Please enter a valid choice.\n");
+    }
+} while (choice != 6);
+return 0;
+}
+
+vbnet
+Copy code
+
+In this code, we define a `Laptop` structure that holds information about a laptop, such as its brand, model, serial number, repair status, and repair cost. We also define an array of `Laptop` structures to hold multiple laptops, and a variable `num_laptops` to keep track of the number of laptops currently in the array.
+
+The main function presents a menu of options to the user, and calls different functions depending on the user's choice. The `add_laptop` function prompts the user for information about a new laptop, creates a new `Laptop` structure with that information, and adds it to the array of laptops. The `update_status` function prompts the user for a serial number, searches the array for a laptop with that serial number, and updates its repair status. The `generate_bill` function prompts the user for a serial number, searches the array for a laptop with that serial number, and displays its brand, model, and repair cost. The `search_laptops` function prompts the user for a search string, searches the array for laptops whose brand or repair status contains that string, and displays their information. The `display_laptops` function simply displays information about all laptops in the array.
+
+Note that this code is just an example and may not cover all edge cases and input validation. It can be improved further by adding error handling and validation for user inputs.
+
+
+
+

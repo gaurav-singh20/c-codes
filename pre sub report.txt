@@ -1,0 +1,36 @@
+Introduction:
+The Laptop Repairing System is a program designed to manage laptops being repaired by a repair service. The program allows the user 
+to add new laptops, update the repair status of existing laptops, generate repair bills, search for laptops based on brand or repair 
+status, and display all laptops in the system.
+
+Features:
+
+1. Add new laptops: The user can enter the brand, model, serial number, and repair cost of a new laptop to add it to the system.
+
+2. Update repair status: The user can update the repair status of a laptop by entering its serial number.
+
+3. Generate repair bill: The user can generate a bill for a laptop by entering its serial number. The bill displays the laptop's brand, 
+model, and repair cost.
+
+4. Search for laptops: The user can search for laptops based on brand or repair status. The program displays information about all 
+laptops that match the search criteria.
+
+5. Display all laptops: The program displays information about all laptops in the system.
+
+6. User-friendly menu: The program displays a menu of options for the user to choose from.
+
+Code:
+The program is implemented in C programming language. The code uses a Laptop structure to store information about laptops, and an 
+array of Laptop structures to store multiple laptops. The program uses functions to add new laptops, update repair status, 
+generate repair bills, search for laptops, and display all laptops. 
+The program also includes input validation to ensure the user enters valid input.
+
+Testing:
+The program has been tested using various test cases to ensure that it works correctly. The tests include adding new laptops, 
+updating repair status, generating repair bills, searching for laptops, and displaying all laptops. The program has been tested 
+with both valid and invalid input to ensure that it handles input validation correctly.
+
+Conclusion:
+The Laptop Repairing System is a useful tool for managing laptops being repaired by a repair service. The program allows the 
+user to add new laptops, update repair status, generate repair bills, search for laptops, and display all laptops. 
+The program has been tested to ensure that it works correctly and handles input validation correctly.
